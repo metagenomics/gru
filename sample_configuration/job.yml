@@ -1,0 +1,79 @@
+project_settings:
+    project_folder: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/GRU/testrun/
+    overwrite_folder: True
+
+nanopore_input: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/GRU/minion_seqences/All_fast5_reads.tar.gz
+
+illumina_reads:
+    enable_illumina: True
+    folder: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/GRU/illumina/
+
+references:
+    enable_references: True
+    folder: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/GRU/references/
+
+file_mapping:
+    lpu83:
+        prefix: lpu83
+        reference: lpu83_allContigs.fasta
+    nc201:
+        prefix: nc201
+        reference: NC201_allContigs.fasta
+    paeruginosa_lb1:
+        prefix: paeruginosalb1
+        reference: PaeruginosaLB1_allContigs.fasta
+        illumina:
+            - TSLf_Paeruginosa_LB1_CAGATC_L001_R1_001.fastq.gz
+            - TSLf_Paeruginosa_LB1_CAGATC_L001_R2_001.fastq.gz
+    sargenteolus:
+        prefix: sargenteolus
+        reference: Sargenteolus_AllContigs.fasta
+        illumina:
+            - TSLF2-Sargenteolus_Praktikum_TTAGGC_L001_R1_001.fastq
+            - TSLF2-Sargenteolus_Praktikum_TTAGGC_L001_R2_001.fastq
+    stendae:
+        prefix: stendae
+        reference: Stendae_allContigs.fasta
+        illumina:
+            - TSLf_Streptomyces_tendae_GCCAAT_L001_R1_001.fastq.gz
+            - TSLf_Streptomyces_tendae_GCCAAT_L001_R2_001.fastq.gz
+
+software_settings:
+    gru_debug: True
+    mapping_threads: 10
+    sorting_threads: 4
+
+software_general:
+    poretools: /vol/python/bin/poretools
+    bwa: /vol/biotools/bin/bwa0_7_13
+    samtools: /vol/biotools/bin/samtools
+    plot_bamstats: /vol/biotools/bin/plot-bamstats
+    quast: /vol/cmg/bin/quast.py
+    r: /usr/bin/R
+
+software_assembler:
+    canu: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/ASSEMBLY/assembler/canu/Linux-amd64/bin/canu
+    minimap: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/ASSEMBLY/assembler/minimap/minimap
+    miniasm: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/ASSEMBLY/assembler/miniasm/miniasm
+    nanopolish: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/ASSEMBLY/assembler/nanopolish/nanopolish
+    spades: /vol/nanopore/MinION_Runs/Lauf5_B-Pool_2016_03_18/ASSEMBLY/assembler/spades/bin/spades
+
+gru_settings:
+    temp_foldername: tmp
+    mapping_foldername: mapping
+    fasta_foldername: fasta
+    fastq_foldername: fastq
+    nanopore_reads_foldername: reads
+    nanopore_reads_filename: _reads
+    bwa_reference_index_foldername: index
+    bwa_concatinated_genome_name: _reads.fasta
+    bwa_mapping_output_foldername: maping
+    samtools_stats_foldername: smstat
+    bamstats_foldername: bsstat
+    quast_output_foldername: quast
+    assembler_outputs_foldername: asm
+    canu_output_foldername: canu
+    miniasm_output_foldername: miniasm
+    spades_output_foldername: spades
+    gru_report_foldername: report
+    report_html_filename: report.html
